@@ -10,9 +10,9 @@ We encourage you to ask any and all questions you have to the project lead and t
 
 ## Teeing up the Problem
 
-In June of 2016, a heatwave swept across the SW United States, causing severe loads on the power grid, and leading to large number of power outages across several counties. We are going to be exploring correlations between temperature and power outages, and the level of exposure these effects have on medically vulnerable populations.
+In June of 2016, a heatwave swept across the SW United States, causing severe loads on the power grid, and leading to large number of power outages across several counties. We are going to be exploring correlations between temperature and power outages, and the level of exposure these effects have on populations who depend on power for thier medical devices.
 
-Energy justice in the United States means making sure that people have access to energy and are also not being charged disproportionately for the basic energy services that are standardly provided. An energy burden is the fraction of a person’s income that goes toward paying for their electrical power. For populations that are medically vulnerable - reliant on medication or medical equipment for day to day life, their energy burden is higher due to the additional costs in maintaining medical care cutting into available income to pay for power. The populations that are reliant on electrically dependent medical equipment (DMEs) are also especially vulnerable during power loss as there is an immediate risk to health to these populations. 
+Energy security in the United States means ensuring that people have consistent and dependable access to electricity, especially when it is critical to their health. For individuals who rely on electrically powered medical equipment (DMEs) or refrigeration for medications, uninterrupted power is essential. 
 
 The ability to effectively respond to and facilitate the restoration of energy systems during disasters relies on the ability of local and federal agencies and first responders to have timely, accurate, and actionable information about the status and potential impacts of energy sector disruptions. The US Department of Energy (DOE) provides information about these disruptions via its Environment for Analysis of Geo-Located Energy Information (EAGLE-I) system run by Oak Ridge National Laboratory. EAGLE-I provides capabilities for monitoring energy infrastructure assets, reporting energy outages, and displaying potential threats to energy infrastructure, and coordinating emergency response and recovery.
 
@@ -70,7 +70,7 @@ NOTE: Something you'll find as you work with these datasets is that there might 
 The exercises and tutorials linked below are in Jupyter notebooks and will familiarize you with the provided data and prepare you to answer the the big questions.
 1. 1_Exploring_Datasets.ipynb - Exploring the datasets - Explore the datasets that you will be working with Google Sheets, draw some graphs
     1. Who should do this? All group members
-2. 2_Python_Pandas_Intro.ipynb - Python and Pandas intro - Some refresher material from Kellen's Python and Pandas tutorial. Along with using Python and Pandas to explore our datasets and learning some useful Pandas tools you'll need for working with these datasets.
+2. 2_Python_Pandas_Intro.ipynb - Python and Pandas intro - Some refresher material on Python and Pandas. There are also instuctions for using Python and Pandas to explore our datasets and some useful Pandas tools you'll need for working with these datasets.
     1. Who should do this? All group members
 3. 3_Time_Series_Data.ipynb - Time series data - Exploring the EAGLE-I time series dataset, including looking at grouping and aggregation, and how to use aggregated data with other regular data with Pandas.
     1. Who should do this? At least one group member
@@ -97,26 +97,21 @@ Note: whenever 'top X' is mentioned in the big questions, we're leaving it up to
 
 2. Of the counties in the SW United States, for June 2016, which counties had the highest and lowest DME reliant population? What percentage of the total population of the county is that? Can you show the top X counties for each? (Datasets:  2016_HHSemPOWERMapHistoricalDataset.xlsx)
 
-3. Can you show the average number of customers without power per county during the heatwave? Can you show it visually, a few charts showing some subset of days in June 17-24 showing the top X counties? (Data sets: eaglei_outages_2016.csv) 
+3. Can you show the ****average number of customers without power**** per county during the heatwave? Can you show it visually, a few charts showing some subset of days in June 17-24 showing the top X counties? (Data sets: eaglei_outages_2016.csv) 
     1. To show how the power outage numbers during a heatwave differ from days when there wasn't a heatwave, can you determine what the average number of customers without power per county is during a time period there wasn't a heatwave? And can you include that information in your charts?
     2. Or do you think it would be better to compare outage numbers with the total county population (from `county_population_by_year.csv`). Pick whichever you think makes sense but make sure you talk about your reasoning when you present it. Remember the note that data sometimes might be missing.
-    
-4. Do counties with higher DME reliant populations have higher average power outages i.e. is there a correlation? Can you use one of the statistical tests you learned to identify this correlation? (Datasets: 2016_HHSemPOWERMapHistoricalDataset.xlsx and eaglei_outages_2016.csv)
-    1. Remember that correlation doesn't imply causation. We're only trying to see if there is a statistically significant relationship between these two values.
-    
-
-5. Can you generate an interactive map showing, for a given day, the counties with the highest temperatures along with their average power outage size for that day, and the size of the DME reliant population of that county? (Datasets: eaglei_outages_2016.csv, CtyAvTemp6XY16.csv where XY is 17,18,19,...,24, 2016_HHSemPOWERMapHistoricalDataset.xlsx)
+        
+4. Can you generate an interactive map showing, for a given day, the counties with the highest temperatures along with their average power outage size for that day, and the size of the DME reliant population of that county? (Datasets: eaglei_outages_2016.csv, CtyAvTemp6XY16.csv where XY is 17,18,19,...,24, 2016_HHSemPOWERMapHistoricalDataset.xlsx)
     1. Can you generate maps for some of the other questions you answered?
 
-6. Try submitting a couple of jobs to the Perlmutter supercomputer. See 6_MPI_Intro.ipynb for more information.
+5. Try submitting a couple of jobs to the Perlmutter supercomputer. See 6_MPI_Intro.ipynb for more information.
 
-7.  Can you tell if the number of customers without power is correlated with the highest temperatures of a particular day during the heatwave? Pick a county or a few counties to make it simpler. (Datasets: eaglei_outages_2016.csv and  search the internet for hourly temperature information for that particular day. You may even have to make your own dataframe with the hourly temperature information if you want to use Pandas to identify the correlation. Here's an example resource that shows hourly temperatures: https://www.timeanddate.com/weather/usa/los-angeles/historic?month=6&year=2016016/historic?month=6&year=20166&year=2016).
+6.  Can you tell if the number of customers without power is correlated with the highest temperatures of a particular day during the heatwave? Pick a county or a few counties to make it simpler. (Datasets: eaglei_outages_2016.csv and search the internet for hourly temperature information for that particular day. You may even have to make your own dataframe with the hourly temperature information if you want to use Pandas to identify the correlation. Here's an example resource that shows hourly temperatures: https://www.timeanddate.com/weather/usa/los-angeles/historic?month=6&year=2016016/historic?month=6&year=20166&year=2016).
     1. You may have to use interpolation to potentially fill in missing data.
 
-8. Can you identify if there is a correlation between the size of the medically vulnerable populations in counties and the size of the asthmatic population in counties? (Datasets: 2016_HHSemPOWERMapHistoricalDataset.xlsx and CtyAvDemog2010.csv . Note that the CtyAvDemog2010.csv is data from 2010. Make sure you are considering that caveat when you present the results.)
-    1. Are you able to investigate if there is a correlation between the size of the medically vulnerable populations and anything else in the CtyAvDemog2010.csv data? What have you tried to investigate? And what did it show you? 
+7. Can you identify if there is a correlation between the size of the medically vulnerable populations in counties and the size of the asthmatic population in counties? (Datasets: 2016_HHSemPOWERMapHistoricalDataset.xlsx and CtyAvDemog2010.csv . Note that the CtyAvDemog2010.csv is data from 2010. Make sure you are considering that caveat when you present the results.)
 
-9. Look for data on the internet about another natural disaster that happened between 2015 and 2021 and see if you can repeat the analysis for it. How many customers lost power? How exposed were the medically vulnerable populations in those counties? examine the power outage information from the data in eaglei_outages from among the years we have available data for. 
+8. Look for data on the internet about another natural disaster that happened between 2015 and 2021 and see if you can repeat the analysis for it. How many customers lost power? How highly represetned were populations depedent on DME in those counties? Examine the power outage information from the data in eaglei_outages from among the years we have available data for. 
   
 
 ### Notes about Big Questions
@@ -136,22 +131,21 @@ Given what you see for many of these power outages and the populations that migh
 
 ### Goals:
 
-* Discuss access to electrical power to medically vulnerable populations and the size of those populations affected during power outages
+* Discuss access to electrical power to populations dependent on DME and the size of those populations affected during power outages
 * Understand how to use statistical tests to justify correlations.
 * Understand how to create and use visualizations to show connections and correlations in big data.
 * Utilize Python and Excel to explore large data frames.
 * Discuss how doing tasks in parallel is more efficient than doing them in series.
-* Present your analyses to the judges in the presentation and explain the assumptions you made in your analyses. For example, if you use “total customers” for a given region to represent relative total populations between counties, acknowledge that while the members of one household are all counted as one customer and businesses are a customer too, "total customers" is still a measure of relative size of the populations of customers living in each county.
+* Present your analyses in the presentation and explain the assumptions you made in your analyses. For example, if you use “total customers” for a given region to represent relative total populations between counties, acknowledge that while the members of one household are all counted as one customer and businesses are a customer too, "total customers" is still a measure of relative size of the populations of customers living in each county.
 
 
 ## Some reading resources:
 
-* Map of burdened communities: https://screeningtool.geoplatform.gov/en
 * Articles about the 2016 heatwave:
 * https://web.archive.org/web/20160622004100/
 * https://weather.com/forecast/regional/news/dangerous-record-heat-southwest-plains
 * https://www.huffpost.com/entry/record-heat-wildfires-west-us_n_57678bb4e4b015db1bc9be59?section=
-* Medicare at risk population map: https://empowerprogram.hhs.gov/empowermap
+* Medicare population map: https://empowerprogram.hhs.gov/empowermap
 * FIPS Codes - https://en.wikipedia.org/wiki/List_of_United_States_FIPS_codes_by_county
 * Useful Jupyter examples for this project - https://github.com/secondspass/jupyter_bootcampproject_examples/
 * Pandas tutorial - https://www.activestate.com/resources/quick-reads/what-is-pandas-in-python-everything-you-need-to-know/
